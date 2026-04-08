@@ -1,5 +1,6 @@
 import java.util.Scanner;
 
+// Base class
 class Employee {
     String name;
     int age;
@@ -11,55 +12,58 @@ class Employee {
         System.out.println(salary);
     }
 }
+
+// Derived class Officer
 class Officer extends Employee {
     String specialization;
 }
 
+// Derived class Manager
 class Manager extends Employee {
     String department;
 }
 
 public class EmployeeInheritance {
-
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
-        Officer officer = new Officer();
-        officer.name = sc.nextLine();
-        officer.age = sc.nextInt();
+        // Officer object
+        Officer o = new Officer();
+        o.name = sc.nextLine();
+        o.age = sc.nextInt();
         sc.nextLine();
-        officer.phoneNumber = sc.nextLine();
-        officer.address = sc.nextLine();
-        officer.salary = sc.nextDouble();
+        o.phoneNumber = sc.nextLine();
+        o.address = sc.nextLine();
+        o.salary = sc.nextDouble();
         sc.nextLine();
-        officer.specialization = sc.nextLine();
+        o.specialization = sc.nextLine();
 
-        Manager manager = new Manager();
-        manager.name = sc.nextLine();
-        manager.age = sc.nextInt();
+        // Manager object
+        Manager m = new Manager();
+        m.name = sc.nextLine();
+        m.age = sc.nextInt();
         sc.nextLine();
-        manager.phoneNumber = sc.nextLine();
-        manager.address = sc.nextLine();
-        manager.salary = sc.nextDouble();
+        m.phoneNumber = sc.nextLine();
+        m.address = sc.nextLine();
+        m.salary = sc.nextDouble();
         sc.nextLine();
-        manager.department = sc.nextLine();
+        m.department = sc.nextLine();
 
+        // Output
         System.out.println("Officer:");
-        System.out.println(officer.name);
-        System.out.println(officer.age);
-        System.out.println(officer.phoneNumber);
-        System.out.println(officer.address);
-        officer.printSalary();
-        System.out.println(officer.specialization);
+        System.out.println(o.name);
+        System.out.println(o.age);
+        System.out.println(o.phoneNumber);
+        System.out.println(o.address);
+        o.printSalary();
+        System.out.println(o.specialization);
 
         System.out.println("Manager:");
-        System.out.println(manager.name);
-        System.out.println(manager.age);
-        System.out.println(manager.phoneNumber);
-        System.out.println(manager.address);
-        manager.printSalary();
-        System.out.println(manager.department);
-
-        sc.close();
+        System.out.println(m.name);
+        System.out.println(m.age);
+        System.out.println(m.phoneNumber);
+        System.out.println(m.address);
+        m.printSalary();
+        System.out.println(m.department);
     }
 }
